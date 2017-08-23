@@ -1,0 +1,25 @@
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td, th{
+  border-right: 1px solid black;
+}
+tr.main:nth-child(2n-1){
+  background-color: lightgrey;
+}
+a{
+  margin-left: 150px;
+  text-align: right;
+  display: inline-block;
+}
+h1{
+  display: inline-block;
+}
+body{
+  width:800px;
+}
+div.header{
+  width:800px;
+
+}

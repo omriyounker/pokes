@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mystyles2.css' %}" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="header">
+    <h1>Welcome {{user.name}}!</h1>
+    <a href="logout">Log Out</a>
+    </div>
+    <p>{{peoplepoked}} people poked you</p>
+
+    <table>
+      {%for line in userPokedList%}
+      <tr>
+        <td>{{line}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    <br>
+    <br>
+    <p>People you may want to poke</p>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Alias</th>
+        <th>Email Address</th>
+        <th>Poke History</th>
+        <th>Action</th>
+      </thead>
+      {%for user1 in userlist%}
+        <tr  class = 'main'>
+          <td>{{user1.name}}</td>
+          <td>{{user1.alias}}</td>
+          <td>{{user1.email}}</td>
+          <td>{{user1.totalpokes}}</td>
+          <td><form action="pokeuser" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="pokeduserid" value={{user1.id}}>
+            <input type="submit" name="" value="Poke!">
+          </form></td>
+        </tr>
+      {%endfor%}
+    </table>
+  </body>
+</html>

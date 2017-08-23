@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login/Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}" media="screen" title="no title" charset="utf-8">
+
+  </head>
+  <body>
+    <header id="regbody">
+      <p class = 'red'>{{errors}}</p>
+      <fieldset>
+        <legend>Register</legend>
+      <form class="register_form" action="register" method="post" name = "Register">
+        {% csrf_token %}
+
+        <label>Name:</label><input type='text' name='name'><br>
+        <label>Alias:</label><input type='text' name='alias'><br>
+        <label>Email:</label><input type='text' name='email'><br>
+        <label>Birthday:</label><input type="date" name="birthday" required><br>
+        <label>Password:</label><input type="password" name="password1"><br>
+        <label>Confirm PW:</label><input type="password" name="password2"><br>
+        <input class = 'button' type='submit' value='Register'>
+
+      </form>
+      </fieldset>
+    </header>
+    <div id="loginbody">
+      <p class = 'red'>{{lerrors}}</p>
+      <fieldset>
+        <legend>Login</legend>
+      <form class="login_form" action="login" method="post">
+        {% csrf_token %}
+
+        <label>Email:</label><input type='text' name='email'><br>
+        <label>Password:</label><input type="password" name="password"><br>
+        <input type="submit" class = 'button'  name="login" value="Login">
+
+      </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+form>label{
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  margin: 5px;
+}
+form>input.button{
+  color:white;
+  background-color: blue;
+  padding:2px;
+  border-radius: 2px;
+  margin-left: 250px;
+}
+p.green{
+  color : green;
+}
+p.red{
+  color:red;
+}
+
+#regbody{
+  width:350px;
+  display: inline-block;
+  vertical-align: top;
+}
+#loginbody{
+  width:350px;
+  display: inline-block;
+  vertical-align: top;
+}
